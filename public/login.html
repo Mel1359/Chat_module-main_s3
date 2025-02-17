@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-logo">STUD</div>
+    </header>
+
+    <div id="login-container">
+        <h1>Вход в чат</h1>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Введите email" required>
+            <input type="password" id="password" placeholder="Введите пароль" required>
+            <button type="submit">Войти</button>
+            <div id="error-message" style="display: none;"></div>
+        </form>
+    </div>
+
+    <footer class="main-footer">
+        © STUD 2025
+    </footer>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

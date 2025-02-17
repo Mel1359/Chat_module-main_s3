@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чаты</title>
+    <link rel="stylesheet" href="css/chats.css">
+</head>
+<body>
+    <script>
+        const token = localStorage.getItem('token');
+        console.log('Проверка токена:', token);
+        if (!token) {
+            console.log('Токен не найден, перенаправление на страницу входа');
+            window.location.replace('/login');
+        }
+    </script>
+
+    <header class="main-header">
+        <div class="header-logo">STUD</div>
+    </header>
+
+    <div class="container">
+        <div id="chats-sidebar">
+            <h2>Чаты</h2>
+            <div id="chats-list">
+            </div>
+            <button id="new-chat-button" class="new-chat-btn">Задать вопрос</button>
+        </div>
+        
+        <div id="chat-container">
+            <h1 id="current-chat-name">Выберите чат</h1>
+            <div id="chat-box">
+            </div>
+            <div id="message-form" style="display: none;">
+                <div class="message-input-container">
+                    <input type="text" id="message-input" placeholder="Введите сообщение...">
+                    <label for="image-upload" class="attach-button">
+                        📎
+                        <input type="file" id="image-upload" accept="image/*" style="display: none;">
+                    </label>
+                    <button id="send-button">Отправить</button>
+                </div>
+                <div class="attachment-preview" id="attachment-preview" style="display: none;">
+                    <div class="preview-info">
+                        <img id="preview-image" src="" alt="Preview">
+                        <span>Прикреплено изображение</span>
+                    </div>
+                    <button id="remove-attachment" class="remove-attachment">×</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="main-footer">
+        © STUD 2025
+    </footer>
+    
+    <div id="userSelectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Выберите пользователя</h2>
+                <input type="text" id="userSearch" placeholder="Поиск пользователя...">
+            </div>
+            <div class="modal-body">
+                <div id="usersList"></div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelUserSelect">Отмена</button>
+                <button id="confirmUserSelect" disabled>Выбрать</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/chats.js"></script>
+</body>
+</html> 
