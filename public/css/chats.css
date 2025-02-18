@@ -147,6 +147,8 @@ body {
 
 .message-image {
     max-width: 100%;
+    max-height: 300px;
+    width: auto;
     height: auto;
     border-radius: 8px;
     margin: 5px 0;
@@ -439,7 +441,7 @@ body {
     }
 
     .message-image {
-        max-height: 150px;
+        max-height: 300px;
     }
 }
 
@@ -454,5 +456,9 @@ body {
 
     #message-input {
         font-size: 13px;
+    }
+
+    .message-image {
+        max-height: 200px;
     }
 }
