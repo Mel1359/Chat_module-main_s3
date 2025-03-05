@@ -1,4 +1,5 @@
 import { getSocket } from './socketModule.js';
+import { loadMessages } from './messageModule.js';
 
 let currentChatId = null;
 
